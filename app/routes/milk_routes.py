@@ -28,7 +28,7 @@ def get_all_milks():
     return jsonify(milks_list), 200
 
 @milks_bp.route("", methods=["DELETE"])
-def delete_all_cards():
+def delete_all_milks():
     milks = Milk.query.all()
     for milk in milks:
         db.session.delete(milk)
