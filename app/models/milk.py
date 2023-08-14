@@ -14,8 +14,7 @@ class Milk(db.Model):
         return cls(timestamp = data_dict["timestamp"],
                 amount = data_dict["amount"],
                 container = data_dict["container"],
-                type = data_dict["type"],
-                cad = data_dict["cad"])
+                type = data_dict["type"])
 
     def make_milk_dict(self):
         return dict(
