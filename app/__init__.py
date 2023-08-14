@@ -22,11 +22,11 @@ def create_app(test_config=None):
         #app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("SQLALCHEMY_TEST_DATABASE_URI")
         app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("RENDER_DATABASE_URI")
 
+    from app.models.milk import Milk
+    
     db.init_app(app)
     migrate.init_app(app, db)
 
-    from app.models.milk import Milk
-    
     from .routes.milk_routes import milks_bp
     app.register_blueprint(milks_bp)
 
