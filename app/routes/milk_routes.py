@@ -18,7 +18,7 @@ def add_new_milk():
     db.session.add(new_milk)
     db.session.commit()
 
-    return make_response(f"Milk {new_milk.id} successfully created", 201)
+    return make_response(jsonify(message=f"Milk {new_milk.id} successfully created"), 201)
 
 @milks_bp.route("", methods=["GET"])
 def get_all_milks():
