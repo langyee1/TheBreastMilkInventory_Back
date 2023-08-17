@@ -58,8 +58,8 @@ def update_milk(milk_id):
     milk=validate_model(Milk, milk_id)
     request_body=request.get_json()
 
-    if request_body.get("amount") is None or request_body.get("container") is None or request_body.get("type") is None or request_body.get("cad") is None:
-        return make_response(f"some additional information needed to update milk {milk.id}",400)
+    #if request_body.get("amount") is None or request_body.get("container") is None or request_body.get("type") is None or request_body.get("cad") is None:
+     #   return make_response(f"some additional information needed to update milk {milk.id}",400)
 
     milk.amount=request_body["amount"]
     milk.container=request_body["container"]
